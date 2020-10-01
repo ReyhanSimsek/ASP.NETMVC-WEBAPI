@@ -1,0 +1,139 @@
+﻿
+@model List<RetaDAL.CUSTOMERS>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Müşteriler</h2>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Yeni Kayıt</button>
+<div class="row">
+    <div class="col-lg-12">
+        <table id="myTable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Telefon</th>
+                    <th>Mail</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.NAME</td>
+                        <td>@item.SURNAME</td>
+                        <td>@item.PHONE</td>
+                        <td>@item.MAIL</td>
+                        <td><a href="/customer/delete/@item.ID" class="btn btn-danger">Sil</a></td>
+                        <td><a href="/customer/edit/@item.ID" data-toggle="modal" data-target="#updateModal" class="btn btn-warning">Güncelle</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Müşteri Ekle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form action="/customer/create" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Ad</label>
+                                <input type="text" name="NAME" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Soyad</label>
+                                <input type="text" name="SURNAME" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Telefon</label>
+                                <input type="text" name="PHONE" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" name="MAIL" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+
+
+                            <button type="submit" class="btn btn-primary">Kaydet</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Müşteri Düzenle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form action="/customer/update/1003" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Ad</label>
+                                <input type="text" name="NAME" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Soyad</label>
+                                <input type="text" name="SURNAME" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Telefon</label>
+                                <input type="text" name="PHONE" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" name="MAIL" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+
+
+                            <button type="submit" class="btn btn-primary">Kaydet</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@*@foreach (var mus in Model)
+    {
+    <tr>
+        <th>@mus.ID</th>
+        <td>@mus.NAME</td>
+        <td>@mus.SURNAME</td>
+        <td>@mus.PHONE</td>
+        <td>@mus.MAIL</td>
+        <td>
+            <a href="/customer/MusterşGetir/@mus.ID" class="btn btn danger"></a></td>
+
+    </tr>
+    }*@

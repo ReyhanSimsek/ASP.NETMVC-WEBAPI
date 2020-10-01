@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RetaDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CUSTOMERADDRESS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CUSTOMERID" Type="Int32" />
+    <Property Name="ADDRESS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CUSTOMERS" Relationship="Self.FK_CUSTOMERADDRESS_CUSTOMERS" FromRole="CUSTOMERADDRESS" ToRole="CUSTOMERS" />
+  </EntityType>
+  <EntityType Name="CUSTOMERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CUSTOMERADDRESS" Relationship="Self.FK_CUSTOMERADDRESS_CUSTOMERS" FromRole="CUSTOMERS" ToRole="CUSTOMERADDRESS" />
+    <NavigationProperty Name="CUSTOMERS1" Relationship="Self.FK_CUSTOMERS_CUSTOMERS" FromRole="CUSTOMERS" ToRole="CUSTOMERS1" />
+    <NavigationProperty Name="CUSTOMERS2" Relationship="Self.FK_CUSTOMERS_CUSTOMERS" FromRole="CUSTOMERS1" ToRole="CUSTOMERS" />
+  </EntityType>
+  <EntityType Name="USERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_CUSTOMERADDRESS_CUSTOMERS">
+    <End Role="CUSTOMERS" Type="Self.CUSTOMERS" Multiplicity="0..1" />
+    <End Role="CUSTOMERADDRESS" Type="Self.CUSTOMERADDRESS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMERS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CUSTOMERADDRESS">
+        <PropertyRef Name="CUSTOMERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CUSTOMERS_CUSTOMERS">
+    <End Role="CUSTOMERS" Type="Self.CUSTOMERS" Multiplicity="1" />
+    <End Role="CUSTOMERS1" Type="Self.CUSTOMERS" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMERS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CUSTOMERS1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RetaDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CUSTOMERADDRESS" EntityType="Self.CUSTOMERADDRESS" />
+    <EntitySet Name="CUSTOMERS" EntityType="Self.CUSTOMERS" />
+    <EntitySet Name="USERS" EntityType="Self.USERS" />
+    <AssociationSet Name="FK_CUSTOMERADDRESS_CUSTOMERS" Association="Self.FK_CUSTOMERADDRESS_CUSTOMERS">
+      <End Role="CUSTOMERS" EntitySet="CUSTOMERS" />
+      <End Role="CUSTOMERADDRESS" EntitySet="CUSTOMERADDRESS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CUSTOMERS_CUSTOMERS" Association="Self.FK_CUSTOMERS_CUSTOMERS">
+      <End Role="CUSTOMERS" EntitySet="CUSTOMERS" />
+      <End Role="CUSTOMERS1" EntitySet="CUSTOMERS" />
+    </AssociationSet>
+    <EntitySet Name="STOCKS" EntityType="RetaDbModel.STOCKS" />
+  </EntityContainer>
+  <EntityType Name="STOCKS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STOCKCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="QUANTITY" Type="Int32" />
+  </EntityType>
+</Schema>

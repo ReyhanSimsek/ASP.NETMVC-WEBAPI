@@ -1,0 +1,12 @@
+C:\Users\sreyh\source\repos\Reta\RetaDAL\bin\Debug\RetaDAL.dll.config
+C:\Users\sreyh\source\repos\Reta\RetaDAL\bin\Debug\RetaDAL.dll
+C:\Users\sreyh\source\repos\Reta\RetaDAL\bin\Debug\RetaDAL.pdb
+C:\Users\sreyh\source\repos\Reta\RetaDAL\bin\Debug\EntityFramework.dll
+C:\Users\sreyh\source\repos\Reta\RetaDAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sreyh\source\repos\Reta\RetaDAL\bin\Debug\EntityFramework.xml
+C:\Users\sreyh\source\repos\Reta\RetaDAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sreyh\source\repos\Reta\RetaDAL\obj\Debug\RetaDAL.csprojAssemblyReference.cache
+C:\Users\sreyh\source\repos\Reta\RetaDAL\obj\Debug\RetaDAL.csproj.CoreCompileInputs.cache
+C:\Users\sreyh\source\repos\Reta\RetaDAL\obj\Debug\RetaDAL.csproj.CopyComplete
+C:\Users\sreyh\source\repos\Reta\RetaDAL\obj\Debug\RetaDAL.dll
+C:\Users\sreyh\source\repos\Reta\RetaDAL\obj\Debug\RetaDAL.pdb

@@ -1,0 +1,15 @@
+C:\Users\sreyh\source\repos\Reta\RetaService\bin\Debug\RetaService.dll.config
+C:\Users\sreyh\source\repos\Reta\RetaService\bin\Debug\RetaService.dll
+C:\Users\sreyh\source\repos\Reta\RetaService\bin\Debug\RetaService.pdb
+C:\Users\sreyh\source\repos\Reta\RetaService\bin\Debug\EntityFramework.dll
+C:\Users\sreyh\source\repos\Reta\RetaService\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sreyh\source\repos\Reta\RetaService\bin\Debug\RetaDAL.dll
+C:\Users\sreyh\source\repos\Reta\RetaService\bin\Debug\RetaDAL.pdb
+C:\Users\sreyh\source\repos\Reta\RetaService\bin\Debug\RetaDAL.dll.config
+C:\Users\sreyh\source\repos\Reta\RetaService\bin\Debug\EntityFramework.xml
+C:\Users\sreyh\source\repos\Reta\RetaService\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sreyh\source\repos\Reta\RetaService\obj\Debug\RetaService.csprojAssemblyReference.cache
+C:\Users\sreyh\source\repos\Reta\RetaService\obj\Debug\RetaService.csproj.CoreCompileInputs.cache
+C:\Users\sreyh\source\repos\Reta\RetaService\obj\Debug\RetaService.csproj.CopyComplete
+C:\Users\sreyh\source\repos\Reta\RetaService\obj\Debug\RetaService.dll
+C:\Users\sreyh\source\repos\Reta\RetaService\obj\Debug\RetaService.pdb
